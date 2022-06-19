@@ -66,13 +66,15 @@ export class News extends Component {
         };
     }
 
- async componentDidMount(){
-    let Url='https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=291b73107b0447ddbc16e02f2215a734';
-   let  data =await fetch(Url)
-   let parsedData= await data.json()
-   console.log(parsedData);
-   this.setState({articles: parsedData.articles})
-}
+//  async componentDidMount(){
+//     let Url='https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=291b73107b0447ddbc16e02f2215a734';
+//    let  data =await fetch(Url) 
+
+//    let parsedData= await data.json()
+//    console.log(parsedData);
+//    this.setState({articles: parsedData.articles})
+// }
+
 
 
     render() {
