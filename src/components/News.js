@@ -64,19 +64,26 @@ export class News extends Component {
             articles: articles,
             loading: false
         };
-
-        console.log("hello");
     }
+
+ async componentDidMount(){
+    let Url='https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=291b73107b0447ddbc16e02f2215a734';
+   let  data =await fetch(Url)
+   let parsedData= await data.json()
+   console.log(parsedData);
+   this.setState({articles: parsedData.articles})
+}
+
+
     render() {
         return (
             <div className='container '>
-                <h1>news component</h1>
-                < div className="row">
+                < div className="row" >
 
                     {this.state.articles.map((el) => {
                         return (
-                            <div className="col-md-4">
-                                <NewsItem title={el.title.slice(0, 20)} description={el.description} imgUrl={el.urlToImage} newsUrl={el.url} />
+                           el.urlToImage &&  <div className="col-md-4" key={el.url}>
+                                <NewsItem  title={el.title?el.title.slice(0, 35):""} description={el.description?el.description.slice(0,84):""} imgUrl={el.urlToImage} newsUrl={el.url} />
                             </div>
                         )
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-
+import './style.css';
 export class NewsItem extends Component {
     render() {
         const { title, description, imgUrl, newsUrl } = this.props;
 
         return (
             <div className="card" >
-                <img src={imgUrl} className="card-img-top thumbnail" alt="..." />
+                <img src={imgUrl} className="card-img-top thumbnail imageset" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title"> {title}</h5>
                     <p className="card-text">{description}</p>
